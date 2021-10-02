@@ -14,6 +14,12 @@
 		0923A67F27089B7500C6598D /* AppGraficas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0923A67D27089B7500C6598D /* AppGraficas.xcdatamodeld */; };
 		0923A68127089B7600C6598D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0923A68027089B7600C6598D /* Assets.xcassets */; };
 		0923A68427089B7600C6598D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0923A68227089B7600C6598D /* LaunchScreen.storyboard */; };
+		0923A68D27089E3A00C6598D /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923A68B27089E3A00C6598D /* TextFieldCell.swift */; };
+		0923A68E27089E3A00C6598D /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0923A68C27089E3A00C6598D /* TextFieldCell.xib */; };
+		0923A6952708A04400C6598D /* SelfieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923A6932708A04400C6598D /* SelfieCell.swift */; };
+		0923A6962708A04400C6598D /* SelfieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0923A6942708A04400C6598D /* SelfieCell.xib */; };
+		0923A69A2708A71900C6598D /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923A6982708A71900C6598D /* CameraVC.swift */; };
+		0923A69B2708A71900C6598D /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0923A6992708A71900C6598D /* CameraVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		0923A68027089B7600C6598D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0923A68327089B7600C6598D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0923A68527089B7600C6598D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0923A68B27089E3A00C6598D /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		0923A68C27089E3A00C6598D /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		0923A6932708A04400C6598D /* SelfieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieCell.swift; sourceTree = "<group>"; };
+		0923A6942708A04400C6598D /* SelfieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelfieCell.xib; sourceTree = "<group>"; };
+		0923A6982708A71900C6598D /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		0923A6992708A71900C6598D /* CameraVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +70,10 @@
 		0923A67327089B7500C6598D /* AppGraficas */ = {
 			isa = PBXGroup;
 			children = (
+				0923A6972708A6EF00C6598D /* ViewController */,
+				0923A68F27089E4100C6598D /* Cells */,
 				0923A67427089B7500C6598D /* AppDelegate.swift */,
 				0923A67627089B7500C6598D /* SceneDelegate.swift */,
-				0923A67827089B7500C6598D /* ViewController.swift */,
 				0923A67A27089B7500C6598D /* Main.storyboard */,
 				0923A68027089B7600C6598D /* Assets.xcassets */,
 				0923A68227089B7600C6598D /* LaunchScreen.storyboard */,
@@ -68,6 +81,59 @@
 				0923A67D27089B7500C6598D /* AppGraficas.xcdatamodeld */,
 			);
 			path = AppGraficas;
+			sourceTree = "<group>";
+		};
+		0923A68F27089E4100C6598D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0923A69227089E7500C6598D /* GraphicCell */,
+				0923A69127089E6000C6598D /* SelfieCell */,
+				0923A69027089E4E00C6598D /* TextFieldCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0923A69027089E4E00C6598D /* TextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				0923A68B27089E3A00C6598D /* TextFieldCell.swift */,
+				0923A68C27089E3A00C6598D /* TextFieldCell.xib */,
+			);
+			path = TextFieldCell;
+			sourceTree = "<group>";
+		};
+		0923A69127089E6000C6598D /* SelfieCell */ = {
+			isa = PBXGroup;
+			children = (
+				0923A6932708A04400C6598D /* SelfieCell.swift */,
+				0923A6942708A04400C6598D /* SelfieCell.xib */,
+			);
+			path = SelfieCell;
+			sourceTree = "<group>";
+		};
+		0923A69227089E7500C6598D /* GraphicCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GraphicCell;
+			sourceTree = "<group>";
+		};
+		0923A6972708A6EF00C6598D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0923A69C2708A72800C6598D /* Camera */,
+				0923A67827089B7500C6598D /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0923A69C2708A72800C6598D /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				0923A6982708A71900C6598D /* CameraVC.swift */,
+				0923A6992708A71900C6598D /* CameraVC.xib */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0923A68427089B7600C6598D /* LaunchScreen.storyboard in Resources */,
+				0923A69B2708A71900C6598D /* CameraVC.xib in Resources */,
 				0923A68127089B7600C6598D /* Assets.xcassets in Resources */,
 				0923A67C27089B7500C6598D /* Main.storyboard in Resources */,
+				0923A68E27089E3A00C6598D /* TextFieldCell.xib in Resources */,
+				0923A6962708A04400C6598D /* SelfieCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +211,11 @@
 			files = (
 				0923A67927089B7500C6598D /* ViewController.swift in Sources */,
 				0923A67F27089B7500C6598D /* AppGraficas.xcdatamodeld in Sources */,
+				0923A69A2708A71900C6598D /* CameraVC.swift in Sources */,
 				0923A67527089B7500C6598D /* AppDelegate.swift in Sources */,
+				0923A6952708A04400C6598D /* SelfieCell.swift in Sources */,
 				0923A67727089B7500C6598D /* SceneDelegate.swift in Sources */,
+				0923A68D27089E3A00C6598D /* TextFieldCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Anahi.test-bankapp-ios-endcom.AppGraficas";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anahi.AppGraficas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,7 +388,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Anahi.test-bankapp-ios-endcom.AppGraficas";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Anahi.AppGraficas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
