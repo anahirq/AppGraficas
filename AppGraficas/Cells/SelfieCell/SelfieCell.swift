@@ -31,8 +31,8 @@ class SelfieCell: UITableViewCell {
     }
 
     
-    public func configure(with imageName: String){
-        imageViewContainer.image = UIImage(named: imageName)
+    public func configureImage(with imageName: UIImage){
+        imageViewContainer.image = #imageLiteral(resourceName: "card")
     }
     
     

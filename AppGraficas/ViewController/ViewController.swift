@@ -7,11 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    func didPressButton(_ tag: Int) {
-        
-             print("I have pressed a button with a tag: ")
-    }
+class ViewController: UIViewController{
+
     
 
     private let tableView: UITableView =  {
@@ -24,6 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        configureTableView()
     }
 
@@ -55,7 +53,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SelfieCell.identifier, for: indexPath) as! SelfieCell
-        cell.configure(with: "SelfieIcon")
+        cell.configureImage(with: #imageLiteral(resourceName: "SelfieIcon"))
         cell.delegate = self
         
             return cell
@@ -63,10 +61,32 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension ViewController: SelfieCellDelegate {
+extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     func didTapButton() {
         print("Button pressed")
+//        let cameraViewController = CameraVC()
+//        cameraViewController.modalPresentationStyle = .overCurrentContext
+//        present(cameraViewController, animated: true, completion: nil)
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        present(picker, animated: true)
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let takenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            return
+        }
+        
+        let selfieCell: SelfieCell = tableView.dequeueReusableCell(withIdentifier: SelfieCell.identifier) as! SelfieCell
+        selfieCell.configureImage(with: #imageLiteral(resourceName: "card"))
+        print("cambiar a tarjeta")
+        tableView.reloadData()
+    }
 }

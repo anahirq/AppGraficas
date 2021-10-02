@@ -8,6 +8,15 @@
 import UIKit
 
 class CameraVC: UIViewController {
+    
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var returnButton: UIButton!
+    @IBOutlet var takeSelfieButton: UIButton!
+    
+    
+    @IBAction func didTapCameraButton(){
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,15 +24,5 @@ class CameraVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

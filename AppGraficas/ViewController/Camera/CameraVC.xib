@@ -20,25 +20,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3k-6f-RKX">
                     <rect key="frame" x="15" y="194" width="384" height="623"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CDd-aE-rQF">
-                            <rect key="frame" x="0.0" y="0.0" width="384" height="623"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Kv-jF-6DA">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="623"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                    <state key="normal" title="Regresar"/>
-                                </button>
-                            </subviews>
-                        </stackView>
-                    </subviews>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
-                    <constraints>
-                        <constraint firstItem="CDd-aE-rQF" firstAttribute="top" secondItem="c3k-6f-RKX" secondAttribute="top" id="5eA-Sa-oln"/>
-                        <constraint firstAttribute="bottom" secondItem="CDd-aE-rQF" secondAttribute="bottom" id="8AB-nA-cWv"/>
-                        <constraint firstItem="CDd-aE-rQF" firstAttribute="leading" secondItem="c3k-6f-RKX" secondAttribute="leading" id="W8p-jo-BVL"/>
-                        <constraint firstAttribute="trailing" secondItem="CDd-aE-rQF" secondAttribute="trailing" id="ZjD-uq-Vqw"/>
-                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
