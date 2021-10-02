@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController{
 
-    
+    let selfieCell = SelfieCell()
+    var selectedImage: UIImage?
 
     private let tableView: UITableView =  {
         let table = UITableView()
@@ -21,8 +22,8 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       configureTableView()
+        configureTableView()
+
     }
 
     override func viewDidLayoutSubviews() {
@@ -36,6 +37,7 @@ class ViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
     }
+
 
 }
 
@@ -53,10 +55,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SelfieCell.identifier, for: indexPath) as! SelfieCell
-        cell.configureImage(with: #imageLiteral(resourceName: "SelfieIcon"))
         cell.delegate = self
-        
-            return cell
+        cell.configureImage(with: selectedImage ?? UIImage.init(imageLiteralResourceName: "SelfieIcon"))
+        return cell
 
     }
 }
@@ -84,9 +85,7 @@ extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, U
             return
         }
         
-        let selfieCell: SelfieCell = tableView.dequeueReusableCell(withIdentifier: SelfieCell.identifier) as! SelfieCell
-        selfieCell.configureImage(with: #imageLiteral(resourceName: "card"))
-        print("cambiar a tarjeta")
+        selectedImage = takenImage
         tableView.reloadData()
     }
 }

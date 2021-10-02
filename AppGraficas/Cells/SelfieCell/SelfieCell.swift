@@ -30,9 +30,12 @@ class SelfieCell: UITableViewCell {
         return UINib(nibName: "SelfieCell", bundle: nil)
     }
 
+    override func layoutSubviews() {
+        imageViewContainer.frame = CGRect(x: 0, y: 0, width: 120, height: 120)
+    }
     
     public func configureImage(with imageName: UIImage){
-        imageViewContainer.image = #imageLiteral(resourceName: "card")
+        imageViewContainer.image = imageName
     }
     
     
