@@ -16,8 +16,7 @@ class ViewController: UIViewController{
     let textfieldCell = TextFieldCell()
     var name: String = ""
     let buttonCell = SendButtonCell()
-    
-    private let storage = Storage.storage().reference()
+
     let database = Firestore.firestore()
     
    
@@ -41,13 +40,20 @@ class ViewController: UIViewController{
 
     }
 
-    func saveData(text: String, image: Data) {
-        let docRef = database.document("appGraficas/imagenUsuario")
-        docRef.setData(["Usuario": text, "Imagen": image])
+
+    func saveData(text:String) {
+        
+        if name == "" || selectedImage == nil{
+            createAlert(title: "Error", message: "Revise información")
+        } else {
+                
+        let docRef = database.document("userInfo/\(name)")
+        guard let imageData = selectedImage!.jpegData(compressionQuality: 0.1) else { return}
+        docRef.setData(["userName" : text, "userImage" : imageData])
+        }
+        
+        
     }
-
-
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -113,19 +119,6 @@ extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, U
         }
         
         selectedImage = takenImage
-        
-        let selectedImageRef = storage.child("image.jpg")
-        //Storage
-        guard let imageData = takenImage.pngData() else {
-            return
-        }
-
-        storage.child("images/file.png").putData(imageData, metadata: nil) { _, error in
-            guard error == nil else {
-                print("Failed to upload")
-                return
-            }
-        }
         tableView.reloadData()
     }
     
@@ -141,6 +134,7 @@ extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, U
 extension ViewController: SendButtonCellDelegate {
    
     func didTapSendButton(){
+        saveData(text: name)
         createAlert(title: "Datos Guardados", message: name)
     }
 }

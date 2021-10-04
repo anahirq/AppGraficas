@@ -28,6 +28,7 @@
 		094C3272270B2F51000E0C7F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 094C3271270B2F51000E0C7F /* FirebaseFirestore */; };
 		094C3274270B2F51000E0C7F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 094C3273270B2F51000E0C7F /* FirebaseDatabase */; };
 		094C3276270B2FE6000E0C7F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 094C3275270B2FE6000E0C7F /* GoogleService-Info.plist */; };
+		094C32A0270B574F000E0C7F /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094C329F270B574F000E0C7F /* ImageUploader.swift */; };
 		096B4250270A1CE3001C0BCD /* ChartQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B424F270A1CE3001C0BCD /* ChartQuestions.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		0940D0E22709FC86002682CF /* SendButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButtonCell.swift; sourceTree = "<group>"; };
 		0940D0E32709FC86002682CF /* SendButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendButtonCell.xib; sourceTree = "<group>"; };
 		094C3275270B2FE6000E0C7F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		094C329F270B574F000E0C7F /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		096B424F270A1CE3001C0BCD /* ChartQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartQuestions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				0923A68227089B7600C6598D /* LaunchScreen.storyboard */,
 				0923A68527089B7600C6598D /* Info.plist */,
 				0923A67D27089B7500C6598D /* AppGraficas.xcdatamodeld */,
+				094C329F270B574F000E0C7F /* ImageUploader.swift */,
 			);
 			path = AppGraficas;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				0923A67927089B7500C6598D /* ViewController.swift in Sources */,
 				0923A67F27089B7500C6598D /* AppGraficas.xcdatamodeld in Sources */,
 				0923A69A2708A71900C6598D /* CameraVC.swift in Sources */,
+				094C32A0270B574F000E0C7F /* ImageUploader.swift in Sources */,
 				0940D0E42709FC86002682CF /* SendButtonCell.swift in Sources */,
 				0923A67527089B7500C6598D /* AppDelegate.swift in Sources */,
 				0923A69F2708E72B00C6598D /* CustomButton.swift in Sources */,
