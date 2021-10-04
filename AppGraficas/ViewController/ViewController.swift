@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class ViewController: UIViewController{
 
@@ -15,6 +16,7 @@ class ViewController: UIViewController{
     var name: String = ""
     let buttonCell = SendButtonCell()
     
+    private let storage = Storage.storage().reference()
 
     private let tableView: UITableView =  {
         let table = UITableView()
@@ -97,6 +99,17 @@ extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, U
         }
         
         selectedImage = takenImage
+        guard let imageData = takenImage.pngData() else {
+            return
+        }
+        
+        storage.child("images/file.png").putData(imageData, metadata: nil) { _, error in
+            guard error == nil else {
+                print("Failed to upload")
+                return
+            }
+        }
+        
         tableView.reloadData()
     }
 }
@@ -107,9 +120,7 @@ extension ViewController: SendButtonCellDelegate {
     func didTapSendButton(){
         
         let alert = UIAlertController(title: "Datos Almacenados", message: name, preferredStyle: .alert)
-
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
         self.present(alert, animated: true)
     }
 }
