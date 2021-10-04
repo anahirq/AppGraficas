@@ -13,6 +13,7 @@ class ViewController: UIViewController{
     var selectedImage: UIImage?
     let textfieldCell = TextFieldCell()
     var name: String = ""
+    let buttonCell = SendButtonCell()
     
 
     private let tableView: UITableView =  {
@@ -44,11 +45,6 @@ class ViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    
-    
-
-
 }
 
 
@@ -61,6 +57,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldCell.identifier, for: indexPath) as! TextFieldCell
+            cell.nombreTextField.delegate = self
             return cell
         }
         
@@ -106,11 +103,30 @@ extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, U
 
 
 extension ViewController: SendButtonCellDelegate {
-    func didTapSendButton() {
-        //name = textfieldCell.nombreTextField.text ?? "No ingresado"
+   
+    func didTapSendButton(){
+        
+        let alert = UIAlertController(title: "Datos Almacenados", message: name, preferredStyle: .alert)
 
-        print("Send button tapped ")
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+}
+
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("TextField did end editing method called")
+        name = textField.text ?? "Oh shit"
+    }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        name = ""
+    }
 }
