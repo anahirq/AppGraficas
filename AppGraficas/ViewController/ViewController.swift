@@ -11,18 +11,25 @@ class ViewController: UIViewController{
 
     let selfieCell = SelfieCell()
     var selectedImage: UIImage?
+    let textfieldCell = TextFieldCell()
+    var name: String = ""
+    
 
     private let tableView: UITableView =  {
         let table = UITableView()
         
         table.register(TextFieldCell.nib(), forCellReuseIdentifier: TextFieldCell.identifier)
         table.register(SelfieCell.nib(), forCellReuseIdentifier: SelfieCell.identifier)
+        table.register(SendButtonCell.nib(), forCellReuseIdentifier: SendButtonCell.identifier)
         return table
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
 
     }
 
@@ -37,6 +44,9 @@ class ViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    
+    
 
 
 }
@@ -54,20 +64,24 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: SelfieCell.identifier, for: indexPath) as! SelfieCell
+        if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: SelfieCell.identifier, for: indexPath) as! SelfieCell
+            cell.delegate = self
+            cell.configureImage(with: selectedImage ?? UIImage.init(imageLiteralResourceName: "SelfieIcon"))
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SendButtonCell.identifier, for: indexPath) as! SendButtonCell
         cell.delegate = self
-        cell.configureImage(with: selectedImage ?? UIImage.init(imageLiteralResourceName: "SelfieIcon"))
         return cell
-
+        
     }
+    
 }
 
 extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     func didTapButton() {
-        print("Button pressed")
-//        let cameraViewController = CameraVC()
-//        cameraViewController.modalPresentationStyle = .overCurrentContext
-//        present(cameraViewController, animated: true, completion: nil)
+
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.delegate = self
@@ -88,4 +102,15 @@ extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, U
         selectedImage = takenImage
         tableView.reloadData()
     }
+}
+
+
+extension ViewController: SendButtonCellDelegate {
+    func didTapSendButton() {
+        //name = textfieldCell.nombreTextField.text ?? "No ingresado"
+
+        print("Send button tapped ")
+    }
+    
+    
 }

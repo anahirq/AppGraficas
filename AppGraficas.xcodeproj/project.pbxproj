@@ -20,6 +20,10 @@
 		0923A6962708A04400C6598D /* SelfieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0923A6942708A04400C6598D /* SelfieCell.xib */; };
 		0923A69A2708A71900C6598D /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923A6982708A71900C6598D /* CameraVC.swift */; };
 		0923A69B2708A71900C6598D /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0923A6992708A71900C6598D /* CameraVC.xib */; };
+		0923A69F2708E72B00C6598D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0923A69E2708E72B00C6598D /* CustomButton.swift */; };
+		0940D0E42709FC86002682CF /* SendButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0940D0E22709FC86002682CF /* SendButtonCell.swift */; };
+		0940D0E52709FC86002682CF /* SendButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0940D0E32709FC86002682CF /* SendButtonCell.xib */; };
+		096B4250270A1CE3001C0BCD /* ChartQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B424F270A1CE3001C0BCD /* ChartQuestions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		0923A6942708A04400C6598D /* SelfieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelfieCell.xib; sourceTree = "<group>"; };
 		0923A6982708A71900C6598D /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		0923A6992708A71900C6598D /* CameraVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
+		0923A69E2708E72B00C6598D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		0940D0E22709FC86002682CF /* SendButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButtonCell.swift; sourceTree = "<group>"; };
+		0940D0E32709FC86002682CF /* SendButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendButtonCell.xib; sourceTree = "<group>"; };
+		096B424F270A1CE3001C0BCD /* ChartQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartQuestions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,8 @@
 		0923A67327089B7500C6598D /* AppGraficas */ = {
 			isa = PBXGroup;
 			children = (
+				096B424E270A1CC9001C0BCD /* Model */,
+				0923A69D2708E71400C6598D /* CustomViews */,
 				0923A6972708A6EF00C6598D /* ViewController */,
 				0923A68F27089E4100C6598D /* Cells */,
 				0923A67427089B7500C6598D /* AppDelegate.swift */,
@@ -86,6 +96,7 @@
 		0923A68F27089E4100C6598D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0940D0E12709FC42002682CF /* SendButton */,
 				0923A69227089E7500C6598D /* GraphicCell */,
 				0923A69127089E6000C6598D /* SelfieCell */,
 				0923A69027089E4E00C6598D /* TextFieldCell */,
@@ -134,6 +145,31 @@
 				0923A6992708A71900C6598D /* CameraVC.xib */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		0923A69D2708E71400C6598D /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				0923A69E2708E72B00C6598D /* CustomButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		0940D0E12709FC42002682CF /* SendButton */ = {
+			isa = PBXGroup;
+			children = (
+				0940D0E22709FC86002682CF /* SendButtonCell.swift */,
+				0940D0E32709FC86002682CF /* SendButtonCell.xib */,
+			);
+			path = SendButton;
+			sourceTree = "<group>";
+		};
+		096B424E270A1CC9001C0BCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				096B424F270A1CE3001C0BCD /* ChartQuestions.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0923A68427089B7600C6598D /* LaunchScreen.storyboard in Resources */,
+				0940D0E52709FC86002682CF /* SendButtonCell.xib in Resources */,
 				0923A69B2708A71900C6598D /* CameraVC.xib in Resources */,
 				0923A68127089B7600C6598D /* Assets.xcassets in Resources */,
 				0923A67C27089B7500C6598D /* Main.storyboard in Resources */,
@@ -212,9 +249,12 @@
 				0923A67927089B7500C6598D /* ViewController.swift in Sources */,
 				0923A67F27089B7500C6598D /* AppGraficas.xcdatamodeld in Sources */,
 				0923A69A2708A71900C6598D /* CameraVC.swift in Sources */,
+				0940D0E42709FC86002682CF /* SendButtonCell.swift in Sources */,
 				0923A67527089B7500C6598D /* AppDelegate.swift in Sources */,
+				0923A69F2708E72B00C6598D /* CustomButton.swift in Sources */,
 				0923A6952708A04400C6598D /* SelfieCell.swift in Sources */,
 				0923A67727089B7500C6598D /* SceneDelegate.swift in Sources */,
+				096B4250270A1CE3001C0BCD /* ChartQuestions.swift in Sources */,
 				0923A68D27089E3A00C6598D /* TextFieldCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
