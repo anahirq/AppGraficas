@@ -35,7 +35,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="msS-MA-piP" secondAttribute="height" multiplier="391:56" id="wf6-0n-4Qq"/>
                                 </constraints>
-                                <state key="normal" title="Tomar Foto"/>
+                                <state key="normal" title="Tomar Foto">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapButton" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Moy-Qh-XO2"/>
                                 </connections>

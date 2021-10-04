@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
 
 class ViewController: UIViewController{
 
@@ -17,6 +18,10 @@ class ViewController: UIViewController{
     let buttonCell = SendButtonCell()
     
     private let storage = Storage.storage().reference()
+    let database = Firestore.firestore()
+    
+   
+
 
     private let tableView: UITableView =  {
         let table = UITableView()
@@ -36,6 +41,14 @@ class ViewController: UIViewController{
 
     }
 
+    func saveData(text: String, image: Data) {
+        let docRef = database.document("appGraficas/imagenUsuario")
+        docRef.setData(["Usuario": text, "Imagen": image])
+    }
+
+
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
@@ -47,6 +60,7 @@ class ViewController: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
     }
+
 }
 
 
@@ -99,18 +113,27 @@ extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, U
         }
         
         selectedImage = takenImage
+        
+        let selectedImageRef = storage.child("image.jpg")
+        //Storage
         guard let imageData = takenImage.pngData() else {
             return
         }
-        
+
         storage.child("images/file.png").putData(imageData, metadata: nil) { _, error in
             guard error == nil else {
                 print("Failed to upload")
                 return
             }
         }
-        
         tableView.reloadData()
+    }
+    
+    
+    func createAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
 }
 
@@ -118,10 +141,7 @@ extension ViewController: SelfieCellDelegate, UIImagePickerControllerDelegate, U
 extension ViewController: SendButtonCellDelegate {
    
     func didTapSendButton(){
-        
-        let alert = UIAlertController(title: "Datos Almacenados", message: name, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true)
+        createAlert(title: "Datos Guardados", message: name)
     }
 }
 
@@ -133,8 +153,7 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("TextField did end editing method called")
-        name = textField.text ?? "Oh shit"
+        name = textField.text ?? ""
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
