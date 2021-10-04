@@ -65,6 +65,7 @@ class ViewController: UIViewController{
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.removeExcessCells()
     }
 
 }
@@ -135,7 +136,7 @@ extension ViewController: SendButtonCellDelegate {
    
     func didTapSendButton(){
         saveData(text: name)
-        createAlert(title: "Datos Guardados", message: name)
+        createAlert(title: "Datos Guardados", message: "Texto ingresado: \(name)")
     }
 }
 
